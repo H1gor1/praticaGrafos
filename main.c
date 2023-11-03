@@ -13,16 +13,21 @@ int main() {
 
     graph grafoMat;
     Grafo *grafoLista;
+    BFSResult bfsResult;
+    DFSResult dfsResult;
 
 
     do {
         printf("\nDigite o que deseja fazer: \n"
-                    "1- Criar os grafos\n"
-                    "2- Inserir arestas\n"
-                    "3- Verificar qual estrutura eh melhor\n"
-                    "4- Verificar grafo completo\n"
-                    "5- Verificar grafo ciclico\n"
-                    "6- Sair\n");
+               "1- Criar os grafos\n"
+               "2- Inserir arestas\n"
+               "3- Verificar qual estrutura eh melhor\n"
+               "4- Verificar grafo completo\n"
+               "5- Verificar grafo ciclico\n"
+               "6- Executar BFS e retornar resultados\n"
+               "7- Executar DFS e retornar resultados\n"
+               "8- Imprimir Grafos\n"
+               "9- Sair\n");
 
         scanf("%d", &escolhamenu);
 
@@ -44,11 +49,11 @@ int main() {
                 scanf("%d", &vert1);
                 scanf("%d", &vert2);
 
-                adicionarAresta(grafoLista, vert1, vert2);
+                adicionarAresta(grafoLista, vert1-1, vert2-1);
                 if(escolha == 0){
-                    insereArestaNDir(&grafoMat, vert1, vert2);
+                    insereArestaNDir(&grafoMat, vert1-1, vert2-1);
                 } else{
-                    insereArestaDir(&grafoMat, vert1, vert2);
+                    insereArestaDir(&grafoMat, vert1-1, vert2-1);
                 }
                 break;
             case 3:
@@ -93,15 +98,43 @@ int main() {
                 }
                 break;
             case 6:
+                printf("Digite o vértice inicial para a BFS: ");
+                int verticeInicial;
+                scanf("%d", &verticeInicial);
+                bfsResult = BFS(&grafoMat, verticeInicial);
+                printf("Resultado do BFS:\n");
+                for (int i = 0; i < grafoMat.vertices; i++) {
+                    printf("Vértice %d: D= %d, Pi= %d, Cor= %c\n", i, bfsResult.d[i], bfsResult.pi[i], bfsResult.c[i]);
+                }
+                free(bfsResult.d);
+                free(bfsResult.pi);
+                free(bfsResult.c);
+                break;
+            case 7:
+                dfsResult = DFS(&grafoMat);
+                printf("Resultado da DFS:\n");
+                for (int i = 0; i < grafoMat.vertices; i++) {
+                    printf("Vértice %d: D= %d, F= %d, Pi= %d, Cor= %c\n", i, dfsResult.d[i], dfsResult.f[i], dfsResult.pi[i], dfsResult.c[i]);
+                }
+                freeDFSResult(dfsResult);
+                break;
+            case 8:
+                printf("Grafo na matriz: \n");
+                imprimeGrafo(grafoMat);
+                printf("Grafo na lista de adjacencia: \n");
+                imprimirGrafo(grafoLista);
+                break;
+            case 9:
                 printf("Saindo...");
                 break;
             default:
                 printf("Opcao invalida!");
                 break;
         }
-    } while (escolhamenu != 6);
+    } while (escolhamenu != 9);
 
     free(grafoLista->array);
     free(grafoLista);
 
+    return 0;
 }

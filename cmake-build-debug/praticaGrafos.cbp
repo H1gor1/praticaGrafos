@@ -76,6 +76,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/higor/CLionProjects/praticaGrafos/fila.c">
+			<Option target="praticaGrafos"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/higor/CLionProjects/praticaGrafos/fila.h">
+			<Option target="praticaGrafos"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/higor/CLionProjects/praticaGrafos/graphListAdj.c">
 			<Option target="praticaGrafos"/>
 		</Unit>

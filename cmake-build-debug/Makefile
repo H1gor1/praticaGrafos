@@ -129,6 +129,30 @@ praticaGrafos/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/praticaGrafos.dir/build.make CMakeFiles/praticaGrafos.dir/build
 .PHONY : praticaGrafos/fast
 
+fila.o: fila.c.o
+.PHONY : fila.o
+
+# target to build an object file
+fila.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/praticaGrafos.dir/build.make CMakeFiles/praticaGrafos.dir/fila.c.o
+.PHONY : fila.c.o
+
+fila.i: fila.c.i
+.PHONY : fila.i
+
+# target to preprocess a source file
+fila.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/praticaGrafos.dir/build.make CMakeFiles/praticaGrafos.dir/fila.c.i
+.PHONY : fila.c.i
+
+fila.s: fila.c.s
+.PHONY : fila.s
+
+# target to generate assembly for a file
+fila.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/praticaGrafos.dir/build.make CMakeFiles/praticaGrafos.dir/fila.c.s
+.PHONY : fila.c.s
+
 graphListAdj.o: graphListAdj.c.o
 .PHONY : graphListAdj.o
 
@@ -210,6 +234,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... praticaGrafos"
+	@echo "... fila.o"
+	@echo "... fila.i"
+	@echo "... fila.s"
 	@echo "... graphListAdj.o"
 	@echo "... graphListAdj.i"
 	@echo "... graphListAdj.s"
