@@ -1,1 +1,0 @@
-/usr/bin/cc -g CMakeFiles/praticaGrafos.dir/main.c.o CMakeFiles/praticaGrafos.dir/graphListAdj.c.o CMakeFiles/praticaGrafos.dir/graphMatAdj.c.o CMakeFiles/praticaGrafos.dir/fila.c.o -o praticaGrafos 

@@ -1,3 +1,0 @@
-/mnt/c/Users/higor/CLionProjects/praticaGrafos/cmake-build-debug/CMakeFiles/praticaGrafos.dir
-/mnt/c/Users/higor/CLionProjects/praticaGrafos/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/c/Users/higor/CLionProjects/praticaGrafos/cmake-build-debug/CMakeFiles/rebuild_cache.dir
